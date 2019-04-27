@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity() {
             val height = edt_height.text.toString().toFloat()
             val bmi = weight / (height * height)
             Log.d(TAG, "bmi: $bmi")
-            Toast.makeText(this, "bmi: $bmi", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, getString(R.string.bmi_is, bmi.toString()), Toast.LENGTH_LONG).show()
             AlertDialog.Builder(this)
-                .setTitle("BMI")
-                .setMessage("BMI: $bmi")
-                .setPositiveButton("OK", null)
+                .setTitle(getString(R.string.result_title))
+                .setMessage(getString(R.string.bmi_is, bmi.toString()))
+                .setPositiveButton(getString(R.string.ok), null)
                 .show()
         }
     }
